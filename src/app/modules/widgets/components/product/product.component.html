@@ -1,0 +1,17 @@
+<div class="widget-container">
+    <mat-card class="widget-card">
+        <mat-card-content class="card-content">
+            <p>Name: {{propsProduct.name}} </p>
+            <p>Address: {{propsProduct.address}} </p>
+            <p>Amount: {{propsProduct.amount}} </p>
+            <p>Role: {{propsProduct.role}} </p>
+            <p>Status: {{propsProduct.status}} </p>
+          </mat-card-content>
+        <mat-card-actions class="card-actions">
+            <div class="card-actions-item">
+                <button mat-raised-button (click) = "openEditedProduct()"><mat-icon>edit</mat-icon><span>Edit</span></button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</div>
+

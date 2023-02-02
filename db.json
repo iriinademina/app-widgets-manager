@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "name": "Annette",
+      "address": "Vermont Street,26",
+      "amount": 368,
+      "role": "Customer",
+      "status": "Open",
+      "id": 1
+    },
+    {
+      "name": "Georgia",
+      "address": "Irvington Place,162",
+      "amount": 2568,
+      "role": "Business",
+      "status": "Open",
+      "id": 2
+    },
+    {
+      "name": "Jennifer",
+      "address": "Kathleen Court,94",
+      "amount": 477,
+      "role": "Admin",
+      "status": "Close",
+      "id": 3
+    },
+    {
+      "name": "Hansen",
+      "address": "Veronica Place,56",
+      "amount": 2756,
+      "role": "Business",
+      "status": "Pending",
+      "id": 4
+    },
+    {
+      "name": "Dana777",
+      "address": "Turnbull Avenue,59",
+      "amount": 357,
+      "role": "Admin",
+      "status": "Open",
+      "id": 5
+    },
+    {
+      "name": "Ramirezw",
+      "address": "Trucklemans Lane,241",
+      "amount": 2547,
+      "role": "Admin",
+      "status": "Pending",
+      "id": 6
+    },
+    {
+      "name": "Antoniaee4",
+      "address": "Anna Court,44",
+      "amount": 117,
+      "role": "Customer",
+      "status": "Close",
+      "id": 7
+    }
+  ]
+}

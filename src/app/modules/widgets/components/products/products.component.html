@@ -1,0 +1,55 @@
+<mat-spinner *ngIf="isLoading$ | async" color="primary" fxFlexAlign="center"></mat-spinner>
+<div class="widgets-container-actions" fxLayout="row wrap" fxLayoutAlign="space-between">
+  <div class="products-container-actions" fxLayout="row wrap" fxLayoutAlign="start">
+    <div fxLayout="row" fxLayoutAlign="center center" class="input-container">
+      <div class="input-icon-container" fxLayout="row">
+        <mat-icon class="input-icon" fxFlexAlign="center" matPrefix>search</mat-icon>
+      </div>
+      <input
+        class="input-search"
+        matInput
+        name="searchInput"
+        [(ngModel)]="searchInput"
+        (input)="onSearchProducts(searchInput)"
+        autocomplete="off"
+        placeholder="Search products by name" />
+    </div>
+   <div class="dropdown-container">
+     <mat-form-field class="field-full-width" appearance="fill">
+       <mat-label>Choose role</mat-label>
+       <mat-select (selectionChange)="changeTypeRole($event.value)">
+         <mat-option *ngFor="let type of rolesList" [value]="type">{{
+           type
+           }}</mat-option>
+       </mat-select>
+     </mat-form-field>
+   </div>
+    <div class="dropdown-container">
+      <mat-form-field class="field-full-width" appearance="fill">
+        <mat-label>Choose status</mat-label>
+        <mat-select (selectionChange)="changeTypeStatus($event.value)">
+          <mat-option *ngFor="let type of statusesList" [value]="type">{{
+            type
+            }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+</div>
+  <button
+    fxFlex="140px"
+    class="form-button"
+    fxFlexAlign="start"
+    mat-raised-button
+    color="primary"
+    (click)="onAddProduct()">
+    ADD
+  </button>
+</div>
+<div
+  class="widgets-container-items"
+  fxLayout="row wrap"
+  fxLayoutAlign="center center"
+  *ngIf="filteredProducts$ | async as products"
+>
+  <app-product *ngFor="let product of products" [propsProduct]="product"></app-product>
+</div>

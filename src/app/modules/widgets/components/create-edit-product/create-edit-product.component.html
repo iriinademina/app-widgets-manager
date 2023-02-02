@@ -1,0 +1,57 @@
+<h1 dxLayuotFlex="row" fxLayoutAlign="center" mat-dialog-title>
+  {{isEditing ? 'Edit Product' : 'Create Product'}}</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <mat-form-field class="field-full-width" appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name of product" type="text" class="field-input-text" formControlName="name" />
+      <mat-error *ngIf="name?.errors?.['required'] && name?.touched">Name is required.</mat-error>
+      <mat-error *ngIf="name?.errors?.['minlength'] && name?.touched"
+      >Name must contain more than three letters.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="field-full-width" appearance="outline">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Address" formControlName="address" />
+      <mat-error *ngIf="address?.errors?.['required'] && address?.touched"
+      >Address is required.</mat-error
+      >
+      <mat-error *ngIf="address?.errors?.['maxlength'] && address?.touched"
+      >Address mustn't contain more than 25 letters.</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field class="field-full-width" appearance="outline">
+      <mat-label>Amount:</mat-label>
+      <input
+        matInput
+        placeholder="Amount"
+        type="number"
+        formControlName="amount"
+      />
+      <mat-error *ngIf="amount?.errors?.['required'] && amount?.touched">Amount is required.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="field-full-width" appearance="fill">
+      <mat-label>Choose role</mat-label>
+      <mat-select formControlName="role">
+        <mat-option *ngFor="let type of rolesList" [value]="type">{{
+          type
+          }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="field-full-width" appearance="fill">
+      <mat-label>Choose status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let type of statusesList" [value]="type">{{
+          type
+          }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="add-form-dialog-actions" dxLayuotFlex="row" fxLayoutAlign="center" mat-dialog-actions>
+    <button mat-raised-button class="add-form-button" color="primary" mat-dialog-close>Close</button>
+    <button mat-raised-button class="add-form-button" type="submit" color="primary" [disabled]="form.invalid">
+      Save
+    </button>
+  </div>
+</form>
+
